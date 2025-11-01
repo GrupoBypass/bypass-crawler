@@ -1,6 +1,6 @@
-from googlesearch import search
 import requests
 from bs4 import BeautifulSoup
+from googlesearch import search
 
 def buscar_noticias(query, num=10):
     resultados = []
@@ -13,11 +13,3 @@ def buscar_noticias(query, num=10):
         except Exception as e:
             print(f"Erro ao acessar {url}: {e}")
     return resultados
-
-query = "Metrô São Paulo site:g1.globo.com"
-
-noticias = buscar_noticias(query)
-
-for noticia in noticias:
-    print(f"📰 {noticia['titulo']}")
-    print(f"🔗 {noticia['link']}\n")
